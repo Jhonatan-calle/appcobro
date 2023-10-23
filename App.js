@@ -29,7 +29,7 @@ function App() {
 	const getdata = () => {
 		console.log("staring getdata");
 		axios
-			.get("https://server-cobroo.glitch.me/jose")
+			.get("https://server-cobroo.glitch.me/william")
 			.then((response) => {
 				if (typeof response.data === "string") {
 					console.log(response.data);
@@ -60,7 +60,7 @@ function App() {
 	const getCuadre = () => {
 		console.log("staring getCuadre");
 		axios
-			.get("https://server-cobroo.glitch.me/clients/cuadre")
+			.get("https://server-cobroo.glitch.me/william/cuadre")
 			.then((response) => {
 				if (typeof response.data === "string") {
 					console.log(response.data);
@@ -104,7 +104,7 @@ function App() {
 		};
 		try {
 			// Realiza la solicitud POST al servidor con el nuevo cliente
-			fetch("https://server-cobroo.glitch.me/clients", {
+			fetch("https://server-cobroo.glitch.me/william", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -143,7 +143,7 @@ function App() {
 			}
 		};
 
-		const url = `https://server-cobroo.glitch.me/clients/${clientId}/loans`;
+		const url = `https://server-cobroo.glitch.me/william/${clientId}/loans`;
 		const prestamo = {
 			fecha: fecha,
 			monto: monto,
@@ -172,7 +172,7 @@ function App() {
 	//eliminar prestamo
 	const fDeleteLoan = (clientId, prestamoId) => {
 		setLoading(true);
-		const url = `https://server-cobroo.glitch.me/clients/${clientId}/loans/${prestamoId}`;
+		const url = `https://server-cobroo.glitch.me/william/${clientId}/loans/${prestamoId}`;
 
 		fetch(url, {
 			method: "DELETE",
@@ -201,7 +201,7 @@ function App() {
 	const addcouta = async (clientId, prestamoId, fecha, monto) => {
 		setLoading(true);
 		console.log(clientId, prestamoId);
-		const url = `https://server-cobroo.glitch.me/clients/${clientId}/loans/${prestamoId}/cuotas`;
+		const url = `https://server-cobroo.glitch.me/william/${clientId}/loans/${prestamoId}/cuotas`;
 		const cuota = {
 			fecha: fecha,
 			monto: monto,
@@ -227,7 +227,7 @@ function App() {
 	//eleminar cuota
 	const fDeleteCuota = (cuotaId, prestamoId, clientId) => {
 		setLoading(true);
-		const url = `https://server-cobroo.glitch.me/clients/${clientId}/loans/${prestamoId}/cuotas/${cuotaId}`;
+		const url = `https://server-cobroo.glitch.me/william/${clientId}/loans/${prestamoId}/cuotas/${cuotaId}`;
 
 		fetch(url, {
 			method: "DELETE",
