@@ -29,7 +29,7 @@ function App() {
 	const getdata = () => {
 		console.log("staring getdata");
 		axios
-			.get("https://server-cobroo.glitch.me/clients")
+			.get("https://server-cobroo.glitch.me/jose")
 			.then((response) => {
 				if (typeof response.data === "string") {
 					console.log(response.data);
